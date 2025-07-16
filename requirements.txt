@@ -1,0 +1,8 @@
+# Framework Web
+Django>=4.0
+
+# Variáveis de Ambiente
+python-decouple
+
+# Servidor de Aplicação WSGI (para deploy)
+gunicorn 
