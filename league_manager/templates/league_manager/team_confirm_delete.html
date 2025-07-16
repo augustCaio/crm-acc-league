@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+<h1>Confirmar Exclusão</h1>
+<hr />
+<p>
+  Você tem certeza que deseja excluir a equipe "<strong
+    >{{ object.name }}</strong
+  >"?
+</p>
+<p class="text-danger">Esta ação não pode ser desfeita.</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Sim, excluir</button>
+  <a href="{% url 'team_list' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}
