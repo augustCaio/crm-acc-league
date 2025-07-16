@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content %}
+<h1>Classificação da Liga</h1>
+<hr />
+
+<table class="table table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Pos.</th>
+      <th>Piloto</th>
+      <th>Equipe</th>
+      <th>Pontos</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for driver in standings %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ driver.full_name }}</td>
+      <td>{{ driver.team.name|default:"Sem Equipe" }}</td>
+      <td><strong>{{ driver.total_points }}</strong></td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="4" class="text-center">
+        Nenhum resultado com pontuação encontrado.
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

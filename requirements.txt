@@ -5,4 +5,7 @@ Django>=4.0
 python-decouple
 
 # Servidor de Aplicação WSGI (para deploy)
-gunicorn 
+gunicorn
+
+# Servir arquivos estáticos em produção
+whitenoise 
